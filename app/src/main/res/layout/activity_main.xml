@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:background="#EDEDED"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--
+                        Show Slide Show
+                    -->
+
+                    <LinearLayout
+                        android:padding="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp">
+                        <ViewFlipper
+                            android:id="@+id/vf_main"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
+<!--                            <ImageView-->
+<!--                                android:src="@drawable/ic_slide_1"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"/>-->
+
+<!--                            <ImageView-->
+<!--                                android:src="@drawable/ic_slide_2"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"/>-->
+
+<!--                            <ImageView-->
+<!--                                android:src="@drawable/ic_slide_3"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"/>-->
+                        </ViewFlipper>
+
+
+                    </LinearLayout>
+
+                    <!--
+                       (END) Show Slide Show
+                   -->
+
+                    <com.startapp.sdk.ads.banner.banner3d.Banner3D
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_OnThi"
+                        android:layout_marginTop="15dp"
+                        app:cardCornerRadius="10dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:padding="23dp"
+                                android:src="@drawable/ic_study"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"/>
+                            <TextView
+                                android:gravity="center"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:text="Đề Ôn Thi Vào 10"
+                                android:layout_width="230dp"
+                                android:layout_height="match_parent"/>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_DeThi"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="10dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:padding="23dp"
+                                android:src="@drawable/ic_exam"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"/>
+                            <TextView
+                                android:gravity="center"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:text="Đề Thi Chính Thức"
+                                android:layout_width="230dp"
+                                android:layout_height="match_parent"/>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_YourQuiz"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="10dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:padding="23dp"
+                                android:src="@drawable/ic_quiz"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"/>
+                            <TextView
+                                android:gravity="center"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:text="Đề Của Bạn"
+                                android:layout_width="230dp"
+                                android:layout_height="match_parent"/>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_note"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="10dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:padding="23dp"
+                                android:src="@drawable/ic_notebook"
+                                android:layout_width="120dp"
+                                android:layout_height="match_parent"/>
+                            <TextView
+                                android:gravity="center"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:text="Ghi Chú"
+                                android:layout_width="230dp"
+                                android:layout_height="match_parent"/>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/nativeAds"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="10dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"/>
+
+                </LinearLayout>
+            </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

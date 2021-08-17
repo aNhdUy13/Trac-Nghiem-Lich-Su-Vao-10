@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "260858605217",
+    "project_id": "thi-lich-su-vao-10",
+    "storage_bucket": "thi-lich-su-vao-10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260858605217:android:c5416aa61e59539d0c0ae0",
+        "android_client_info": {
+          "package_name": "com.nda.thi_lich_su_vao_10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260858605217-ukh8namjmik9v9lke7n8qjf254m68p2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeauWsi63tVRjQJ3N9aVji2l_M6lMOFC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260858605217-ukh8namjmik9v9lke7n8qjf254m68p2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
