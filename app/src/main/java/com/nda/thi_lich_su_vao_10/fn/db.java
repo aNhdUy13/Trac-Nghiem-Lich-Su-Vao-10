@@ -47,8 +47,30 @@ public class db extends SQLiteOpenHelper {
 
 
     /*
-        User exam custom
+        (END) User exam custom
      */
+
+//    /*
+//        Practice
+//     */
+//    public static String practiceTopic_table = "practiceTopic_table";
+//    public static String column1_practiceTopic_number = "practiceTopic_number";
+//    public static String column2_practiceTopic_title = "practiceTopic_title";
+//
+//    public static String practiceTopicDetail_table = "practiceTopicDetail_table";
+//    public static String column1_foreignKey_practiceTopicDetail_number  = "practiceTopic_number";
+//    public static String column2_practiceTopicDetail_questionNumber     = "practiceDetail_questionNumber";
+//    public static String column3_practiceTopicDetail_question           = "practiceDetail_question";
+//    public static String column4_practiceTopicDetail_ansA               = "practiceDetail_ansA";
+//    public static String column5_practiceTopicDetail_ansB               = "practiceDetail_ansB";
+//    public static String column6_practiceTopicDetail_ansC               = "practiceDetail_ansC";
+//    public static String column7_practiceTopicDetail_ansD               = "practiceDetail_ansD";
+//    public static String column8_practiceTopicDetail_correctAns         = "practiceDetail_correctAns";
+//
+//
+//    /*
+//        (END) Practice
+//     */
 
     public db(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

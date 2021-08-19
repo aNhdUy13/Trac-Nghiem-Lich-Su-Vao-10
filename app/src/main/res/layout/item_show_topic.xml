@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_marginTop="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:backgroundTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:cardCornerRadius="10dp">
+        <LinearLayout
+            android:id="@+id/ll_showExam"
+            android:padding="6dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+            <LinearLayout
+                android:background="@drawable/ic_teamplate_number"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+                <TextView
+                    android:id="@+id/txt_showExamNumber"
+                    android:text="1"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.4">
+                <TextView
+                    android:id="@+id/txt_showExamTitle"
+                    android:text="Ôn Thi Vào 10 Lịch Sử Việt Nam"
+                    android:gravity="center|left"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

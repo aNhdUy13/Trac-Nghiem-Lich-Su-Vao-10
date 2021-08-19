@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.nda.thi_lich_su_vao_10.fn.DeOnThi.DeOnThi_System;
+import com.nda.thi_lich_su_vao_10.fn.DeOnThi.DeThi;
 import com.nda.thi_lich_su_vao_10.fn.DeThi.DeThi_System;
 import com.nda.thi_lich_su_vao_10.fn.Note.Note_System;
 import com.nda.thi_lich_su_vao_10.fn.UserDe.UserDe_System;
@@ -19,12 +21,20 @@ import com.nda.thi_lich_su_vao_10.fn.db;
 import com.startapp.sdk.adsbase.StartAppAd;
 import com.startapp.sdk.adsbase.StartAppSDK;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     public static db database;
 
     ViewFlipper vf_main;
     Animation slideIn, slideOut;
     CardView cv_OnThi ,cv_DeThi, cv_YourQuiz, cv_note;
+
+    List<DeThi> deThiList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         createDatabase();
     }
+
+
 
     private void createDatabase() {
         database = new db(this, db.dbName,null,1);

@@ -18,7 +18,7 @@
             android:windowSoftInputMode="adjustPan"
             />
 
-        <activity android:name=".fn.UserDe.DetailDe.DetailDe_System"
+        <activity android:name=".fn.DetailDe_System"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:windowSoftInputMode="adjustPan"
             />

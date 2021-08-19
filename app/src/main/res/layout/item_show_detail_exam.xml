@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="15dp"
+        android:layout_width="350dp"
+        android:layout_height="430dp"
+        app:cardCornerRadius="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:padding="5dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_weight="0.4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <TextView
+                    android:id="@+id/txt_questionNumber"
+                    android:text="Câu ?"
+                    android:gravity="center"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="7dp"
+                android:layout_weight="0.9">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/txt_questionDetail"
+                        android:text="Câu Hổi  "
+                        android:textSize="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </ScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:weightSum="4"
+                android:layout_weight="1.7">
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:weightSum="4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <RadioButton
+                        android:id="@+id/radioBtn_ansA"
+                        android:layout_weight="1"
+                        android:text="A. AnsA"
+                        android:textSize="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"/>
+
+                    <RadioButton
+                        android:id="@+id/radioBtn_ansB"
+                        android:text="B. AnsB"
+                        android:textSize="12dp"
+                        android:layout_weight="1"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"/>
+
+                    <RadioButton
+                        android:id="@+id/radioBtn_ansC"
+                        android:text="C. AnsC"
+                        android:layout_weight="1"
+
+                        android:textSize="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"/>
+
+                    <RadioButton
+                        android:id="@+id/radioBtn_ansD"
+                        android:text="D. AnsD"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"/>
+                </RadioGroup>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:weightSum="2"-->
+<!--                    android:layout_weight="0.9">-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.2">-->
+<!--                        <RadioButton-->
+<!--                            android:id="@+id/radioBtn_ansA"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.2">-->
+<!--                        <TextView-->
+<!--                            android:text="A"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textSize="20dp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"/>-->
+<!--                    </LinearLayout>-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.1"/>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1.4">-->
+<!--                            <TextView-->
+<!--                                android:id="@+id/txt_showAnsA"-->
+<!--                                android:text="Câu Trả Lời A  "-->
+<!--                                android:gravity="center|left"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_weight="0.1"/>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:weightSum="2"-->
+<!--                    android:layout_weight="0.9">-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.2">-->
+<!--                        <RadioButton-->
+<!--                            android:id="@+id/radioBtn_ansB"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.2">-->
+<!--                        <TextView-->
+<!--                            android:text="B"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textSize="20dp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"/>-->
+<!--                    </LinearLayout>-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.1"/>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1.4">-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txt_showAnsB"-->
+<!--                                android:text="Câu Trả Lời B"-->
+<!--                                android:gravity="center|left"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_weight="0.1"/>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:weightSum="2"-->
+<!--                    android:layout_weight="0.9">-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.2">-->
+<!--                        <RadioButton-->
+<!--                            android:id="@+id/radioBtn_ansC"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.2">-->
+<!--                        <TextView-->
+<!--                            android:text="C"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textSize="20dp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"/>-->
+<!--                    </LinearLayout>-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.1"/>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1.4">-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txt_showAnsC"-->
+<!--                                android:text="Câu Trả Lời C"-->
+<!--                                android:gravity="center|left"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_weight="0.1"/>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:weightSum="2"-->
+<!--                    android:layout_weight="0.9">-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.2">-->
+<!--                        <RadioButton-->
+<!--                            android:id="@+id/radioBtn_ansD"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.2">-->
+<!--                        <TextView-->
+<!--                            android:text="D"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textSize="20dp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"/>-->
+<!--                    </LinearLayout>-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="0.1"/>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1.4">-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txt_showAnsD"-->
+<!--                                android:text="Câu Trả Lời D"-->
+<!--                                android:gravity="center|left"-->
+<!--                                android:textSize="12dp"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_weight="0.1"/>-->
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
