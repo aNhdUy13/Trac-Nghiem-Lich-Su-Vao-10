@@ -7,6 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".fn.DeOnThi.DeOnThi_System">
 
+    <com.startapp.sdk.ads.banner.Banner
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <ImageView
         android:id="@+id/img_checkGrade"
         android:visibility="gone"

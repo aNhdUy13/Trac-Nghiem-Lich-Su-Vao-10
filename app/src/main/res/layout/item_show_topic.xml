@@ -49,7 +49,6 @@
                     android:text="Ôn Thi Vào 10 Lịch Sử Việt Nam"
                     android:gravity="center|left"
                     android:textSize="17dp"
-                    android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
             </LinearLayout>

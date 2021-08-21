@@ -188,21 +188,21 @@ public class ScreenSlidePageFragment extends Fragment {
     {
         if (ans.equals("A"))
         {
-            radioBtn_ansA.setBackgroundColor(Color.GREEN);
+            radioBtn_ansA.setBackgroundColor(Color.parseColor("#8BC34A"));
         }
         else if (ans.equals("B"))
         {
-            radioBtn_ansB.setBackgroundColor(Color.GREEN);
+            radioBtn_ansB.setBackgroundColor(Color.parseColor("#8BC34A"));
 
         }
         else if (ans.equals("C"))
         {
-            radioBtn_ansC.setBackgroundColor(Color.GREEN);
+            radioBtn_ansC.setBackgroundColor(Color.parseColor("#8BC34A"));
 
         }
         else if (ans.equals("D"))
         {
-            radioBtn_ansD.setBackgroundColor(Color.GREEN);
+            radioBtn_ansD.setBackgroundColor(Color.parseColor("#8BC34A"));
 
         }
         else;
