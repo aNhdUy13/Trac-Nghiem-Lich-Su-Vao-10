@@ -5,6 +5,68 @@
     android:gravity="center"
     android:layout_height="wrap_content">
 
+    <LinearLayout
+        android:id="@+id/ll_result"
+        android:visibility="gone"
+        android:elevation="5dp"
+        android:background="#F44336"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="240dp"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:text="Câu Trả Lời "
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center|left"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/txt_showUserAns"
+                android:text=""
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center|left"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:text="Đáp Án "
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center|left"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/txt_showCorrectAns"
+                android:text="D"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center|left"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
     <androidx.cardview.widget.CardView
         android:layout_marginTop="15dp"
         android:layout_width="350dp"
@@ -18,16 +80,20 @@
             android:orientation="vertical">
             <LinearLayout
                 android:layout_weight="0.4"
+                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
                 <TextView
                     android:id="@+id/txt_questionNumber"
                     android:text="Câu ?"
-                    android:gravity="center"
                     android:textSize="17dp"
                     android:textStyle="bold"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"/>
+
+
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -72,6 +138,7 @@
                         android:text="B. AnsB"
                         android:textSize="12dp"
                         android:layout_weight="1"
+
 
                         android:layout_width="match_parent"
                         android:layout_height="0dp"/>

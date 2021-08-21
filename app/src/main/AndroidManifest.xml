@@ -12,30 +12,32 @@
         android:roundIcon="@mipmap/app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Thi_Lich_Su_Vao_10">
-
-        <activity android:name=".fn.Note.NoteDetail"
+        <activity android:name=".fn.DoneExam.ExamFinished"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
+            android:name=".fn.DetailDe_Another.ScreenSlideActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".fn.Note.NoteDetail"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            android:windowSoftInputMode="adjustPan"
-            />
-
-        <activity android:name=".fn.DetailDe_System"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".fn.DetailDe.DetailDe_System"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            android:windowSoftInputMode="adjustPan"
-            />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".fn.UserDe.UserDe_System"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            android:windowSoftInputMode="adjustPan"
-            />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".fn.Note.Note_System"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".fn.DeOnThi.DeOnThi_System"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-
-        <activity android:name=".fn.DeThi.DeThi_System"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
+            android:name=".fn.DeThi.DeThi_System"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">

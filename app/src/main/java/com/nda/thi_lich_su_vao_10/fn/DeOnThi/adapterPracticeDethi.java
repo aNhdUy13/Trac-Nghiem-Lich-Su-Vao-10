@@ -5,16 +5,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nda.thi_lich_su_vao_10.R;
-import com.nda.thi_lich_su_vao_10.fn.DetailDe_System;
+import com.nda.thi_lich_su_vao_10.fn.DetailDe.DetailDe_System;
+import com.nda.thi_lich_su_vao_10.fn.DetailDe_Another.ScreenSlideActivity;
 
 import java.util.List;
 
@@ -41,10 +40,26 @@ public class adapterPracticeDethi extends RecyclerView.Adapter<adapterPracticeDe
         holder.txt_showExamNumber.setText(deThi.getTopicNumber());
         holder.txt_showExamTitle.setText(deThi.getTopicTItle());
 
+//        holder.ll_showExam.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, DetailDe_System.class);
+//                Bundle bundle = new Bundle();
+//
+//                bundle.putBoolean("practice",true);
+//                bundle.putString("examNumber",deThi.getTopicNumber());
+//                bundle.putString("examTitle",deThi.getTopicTItle());
+//                intent.putExtras(bundle);
+//
+//                context.startActivity(intent);
+//            }
+//        });
+
+        // Work with another
         holder.ll_showExam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, DetailDe_System.class);
+                Intent intent = new Intent(context, ScreenSlideActivity.class);
                 Bundle bundle = new Bundle();
 
                 bundle.putBoolean("practice",true);

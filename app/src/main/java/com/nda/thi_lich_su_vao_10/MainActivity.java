@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         slideIn= AnimationUtils.loadAnimation(this,R.anim.slide_in);
         slideOut= AnimationUtils.loadAnimation(this,R.anim.slide_out);
 
-        int[] image = {R.drawable.ic_slide_1, R.drawable.ic_slide_2, R.drawable.ic_slide_3};
+        int[] image = {R.drawable.ic_slide_2,R.drawable.ic_slide_1,  R.drawable.ic_slide_3};
 
         for(int i = 0 ; i <image.length; i++)
         {

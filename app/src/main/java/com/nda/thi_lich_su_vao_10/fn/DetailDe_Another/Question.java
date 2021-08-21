@@ -1,14 +1,23 @@
-package com.nda.thi_lich_su_vao_10.fn.DetailDe;
+package com.nda.thi_lich_su_vao_10.fn.DetailDe_Another;
 
-public class DetailDe {
+
+import java.io.Serializable;
+
+/**
+ *  Để chuyền 1 class đối tượng, cần implement Serializable
+ */
+public class Question implements Serializable {
     private String topicNumber;
     private String questionNumber;
     private String question;
     private String ansA, ansB, ansC,ansD ;
     private String correctAns;
+    private String userAns = "";
 
-    public DetailDe(String topicNumber, String questionNumber, String question, String ansA,
-                    String ansB, String ansC, String ansD, String correctAns) {
+    public int choiceId = -1; // used  to check ID of radio;
+
+    public Question(String topicNumber, String questionNumber, String question, String ansA,
+                    String ansB, String ansC, String ansD, String correctAns, String userAns) {
         this.topicNumber = topicNumber;
         this.questionNumber = questionNumber;
         this.question = question;
@@ -17,6 +26,15 @@ public class DetailDe {
         this.ansC = ansC;
         this.ansD = ansD;
         this.correctAns = correctAns;
+        this.userAns = userAns;
+    }
+
+    public String getUserAns() {
+        return userAns;
+    }
+
+    public void setUserAns(String userAns) {
+        this.userAns = userAns;
     }
 
     public String getTopicNumber() {

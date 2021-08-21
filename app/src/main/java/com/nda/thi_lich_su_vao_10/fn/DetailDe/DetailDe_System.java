@@ -1,4 +1,4 @@
-package com.nda.thi_lich_su_vao_10.fn;
+package com.nda.thi_lich_su_vao_10.fn.DetailDe;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,12 +13,12 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nda.thi_lich_su_vao_10.R;
-import com.nda.thi_lich_su_vao_10.fn.DetailDe.AdapterDetailDe;
-import com.nda.thi_lich_su_vao_10.fn.DetailDe.DetailDe;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -50,6 +50,7 @@ public class DetailDe_System extends AppCompatActivity {
     AdapterDetailDe mAdapterDetailDe;
     RecyclerView rcv_showDetailExamTopic;
 
+    boolean showResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -243,16 +244,16 @@ public class DetailDe_System extends AppCompatActivity {
         Dialog dialog = new Dialog(DetailDe_System.this);
         dialog.setContentView(R.layout.dialog_submit_timeout);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        txt_content                = (TextView) dialog.findViewById(R.id.txt_content);
+//        txt_content                = (TextView) dialog.findViewById(R.id.txt_content);
         txt_titleSubmitTimeout     = (TextView) dialog.findViewById(R.id.txt_titleSubmitTimeout);
-        txt_showNumberOfCorrectAns = (TextView) dialog.findViewById(R.id.txt_showNumberOfCorrectAns);
+//        txt_showNumberOfCorrectAns = (TextView) dialog.findViewById(R.id.txt_showNumberOfCorrectAns);
         btn_showResult = (Button) dialog.findViewById(R.id.btn_showResult);
         btn_out     = (Button) dialog.findViewById(R.id.btn_out);
 
         txt_showNumberOfCorrectAns.setVisibility(View.GONE);
-        txt_content.setVisibility(View.GONE);
-        txt_titleSubmitTimeout.setText("Nộp Bài ?");
+        txt_titleSubmitTimeout.setText("Nộp Bài");
         btn_showResult.setText("CÓ");
+        txt_content.setText("Bạn Muốn Nộp Bài ?");
         btn_out.setText("HỦY");
 
         btn_out.setOnClickListener(new View.OnClickListener() {
@@ -265,8 +266,12 @@ public class DetailDe_System extends AppCompatActivity {
         btn_showResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DetailDe_System.this, "Show Result", Toast.LENGTH_SHORT).show();
+
+                showResult = true;
+
                 countDownTimer.cancel();
+
+                dialog.dismiss();
             }
         });
 
@@ -281,7 +286,7 @@ public class DetailDe_System extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
 
-        txt_showNumberOfCorrectAns = (TextView) dialog.findViewById(R.id.txt_showNumberOfCorrectAns);
+//        txt_showNumberOfCorrectAns = (TextView) dialog.findViewById(R.id.txt_showNumberOfCorrectAns);
 
         btn_showResult = (Button) dialog.findViewById(R.id.btn_showResult);
         btn_out     = (Button) dialog.findViewById(R.id.btn_out);
@@ -318,5 +323,29 @@ public class DetailDe_System extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         dialogOutExam();
+    }
+
+
+    public void showResult(LinearLayout ll_result, RadioButton radioBtn_ansA, RadioButton radioBtn_ansB, RadioButton radioBtn_ansC,
+                           RadioButton radioBtn_ansD,  int position)
+    {
+        if (showResult)
+        {
+                ll_result.setVisibility(View.VISIBLE);
+
+                img_submitExam.setVisibility(View.GONE);
+                radioBtn_ansA.setClickable(false);
+                radioBtn_ansB.setClickable(false);
+                radioBtn_ansC.setClickable(false);
+                radioBtn_ansD.setClickable(false);
+
+            rcv_showDetailExamTopic.post(new Runnable() {
+                @Override
+                public void run() {
+
+                    mAdapterDetailDe.notifyDataSetChanged();
+                }
+            });
+        }
     }
 }
