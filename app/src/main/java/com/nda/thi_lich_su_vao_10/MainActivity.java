@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         slideIn= AnimationUtils.loadAnimation(this,R.anim.slide_in);
         slideOut= AnimationUtils.loadAnimation(this,R.anim.slide_out);
 
-        int[] image = {R.drawable.ic_slide_2,R.drawable.ic_slide_1,  R.drawable.ic_slide_3};
+        int[] image = {R.drawable.ic_slide_2,R.drawable.ic_slide_4,R.drawable.ic_slide_1,  R.drawable.ic_slide_3, R.drawable.ic_slide_5};
 
         for(int i = 0 ; i <image.length; i++)
         {
@@ -132,12 +132,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cv_YourQuiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, UserDe_System.class));
-            }
-        });
+//        cv_YourQuiz.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, UserDe_System.class));
+//            }
+//        });
 
         cv_note.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
         cv_OnThi     = (CardView) findViewById(R.id.cv_OnThi);
         cv_DeThi     = (CardView) findViewById(R.id.cv_DeThi);
-        cv_YourQuiz  = (CardView) findViewById(R.id.cv_YourQuiz);
+        //cv_YourQuiz  = (CardView) findViewById(R.id.cv_YourQuiz);
         cv_note      = (CardView) findViewById(R.id.cv_note);
 
     }

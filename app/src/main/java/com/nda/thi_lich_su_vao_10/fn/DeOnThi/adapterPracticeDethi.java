@@ -39,7 +39,7 @@ public class adapterPracticeDethi extends RecyclerView.Adapter<adapterPracticeDe
 
         holder.txt_showExamNumber.setText(deThi.getTopicNumber());
         holder.txt_showExamTitle.setText(deThi.getTopicTItle());
-
+        holder.txt_showNumberQues.setText(deThi.getNumQues());
 //        holder.ll_showExam.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -79,14 +79,14 @@ public class adapterPracticeDethi extends RecyclerView.Adapter<adapterPracticeDe
 
     public class practiceDeThiViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txt_showExamNumber,txt_showExamTitle;
+        TextView txt_showExamNumber,txt_showExamTitle, txt_showNumberQues;
         LinearLayout ll_showExam;
 
         public practiceDeThiViewHolder(@NonNull  View itemView) {
             super(itemView);
             txt_showExamNumber      = (TextView) itemView.findViewById(R.id.txt_showExamNumber);
             txt_showExamTitle       = (TextView) itemView.findViewById(R.id.txt_showExamTitle);
-
+            txt_showNumberQues      = (TextView) itemView.findViewById(R.id.txt_showNumberQues);
             ll_showExam     = (LinearLayout) itemView.findViewById(R.id.ll_showExam);
         }
     }

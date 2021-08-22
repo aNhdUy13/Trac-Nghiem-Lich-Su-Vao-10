@@ -42,15 +42,36 @@
 
             <LinearLayout
                 android:layout_width="0dp"
+                android:weightSum="2"
+                android:orientation="vertical"
                 android:layout_height="match_parent"
                 android:layout_weight="2.4">
-                <TextView
-                    android:id="@+id/txt_showExamTitle"
-                    android:text="Ôn Thi Vào 10 Lịch Sử Việt Nam"
-                    android:gravity="center|left"
-                    android:textSize="17dp"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="0dp"
+                    android:layout_weight="1.3">
+                    <TextView
+                        android:id="@+id/txt_showExamTitle"
+                        android:text="Ôn Thi Vào 10 Lịch Sử Việt Nam"
+                        android:gravity="center|left"
+                        android:textSize="17dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7">
+                    <TextView
+                        android:id="@+id/txt_showNumberQues"
+                        android:text="40 Câu"
+                        android:gravity="center|left"
+                        android:textSize="13dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+
             </LinearLayout>
 
 

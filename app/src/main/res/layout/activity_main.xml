@@ -30,7 +30,7 @@
                     <LinearLayout
                         android:padding="15dp"
                         android:layout_width="match_parent"
-                        android:layout_height="250dp">
+                        android:layout_height="220dp">
                         <ViewFlipper
                             android:id="@+id/vf_main"
 
@@ -120,32 +120,32 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cv_YourQuiz"
-                        android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        android:backgroundTint="@color/white"
-                        android:layout_width="350dp"
-                        android:layout_height="110dp">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:id="@+id/cv_YourQuiz"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        app:cardCornerRadius="10dp"-->
+<!--                        android:backgroundTint="@color/white"-->
+<!--                        android:layout_width="350dp"-->
+<!--                        android:layout_height="110dp">-->
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <ImageView
-                                android:padding="23dp"
-                                android:src="@drawable/ic_quiz"
-                                android:layout_width="120dp"
-                                android:layout_height="match_parent"/>
-                            <TextView
-                                android:gravity="center"
-                                android:textSize="20dp"
-                                android:textStyle="bold"
-                                android:text="Đề Của Bạn"
-                                android:layout_width="230dp"
-                                android:layout_height="match_parent"/>
-                        </LinearLayout>
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+<!--                            <ImageView-->
+<!--                                android:padding="23dp"-->
+<!--                                android:src="@drawable/ic_quiz"-->
+<!--                                android:layout_width="120dp"-->
+<!--                                android:layout_height="match_parent"/>-->
+<!--                            <TextView-->
+<!--                                android:gravity="center"-->
+<!--                                android:textSize="20dp"-->
+<!--                                android:textStyle="bold"-->
+<!--                                android:text="Đề Của Bạn"-->
+<!--                                android:layout_width="230dp"-->
+<!--                                android:layout_height="match_parent"/>-->
+<!--                        </LinearLayout>-->
 
-                    </androidx.cardview.widget.CardView>
+<!--                    </androidx.cardview.widget.CardView>-->
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cv_note"

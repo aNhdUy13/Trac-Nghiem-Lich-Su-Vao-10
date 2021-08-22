@@ -62,11 +62,11 @@ public class DeOnThi_System extends AppCompatActivity {
 //||
                 if (split[0].length() > 0  && split[1].length() > 0)
                 {
-                    deThi = new DeThi(split[0],split[1]);
+                    deThi = new DeThi(split[0],split[1], split[2]);
                 }
                 else
                 {
-                    deThi = new DeThi("0","0");
+                    deThi = new DeThi("X","X","X");
 
 
                 }
