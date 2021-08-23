@@ -1,47 +1,70 @@
 package com.nda.thi_lich_su_vao_10;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.UiThread;
+import androidx.annotation.WorkerThread;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.JsonReader;
+import android.util.JsonToken;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.nda.thi_lich_su_vao_10.fn.DeOnThi.DeOnThi_System;
-import com.nda.thi_lich_su_vao_10.fn.DeOnThi.DeThi;
+import com.nda.thi_lich_su_vao_10.fn.DeOnThi.DeOnThi;
 import com.nda.thi_lich_su_vao_10.fn.DeThi.DeThi_System;
 import com.nda.thi_lich_su_vao_10.fn.Note.Note_System;
-import com.nda.thi_lich_su_vao_10.fn.UserDe.UserDe_System;
+import com.nda.thi_lich_su_vao_10.fn.TamLy.TamLy;
 import com.nda.thi_lich_su_vao_10.fn.db;
+import com.nda.thi_lich_su_vao_10.fn.nativeAds.AdapterWithNativeAd;
+import com.startapp.sdk.ads.nativead.NativeAdPreferences;
+import com.startapp.sdk.ads.nativead.StartAppNativeAd;
+import com.startapp.sdk.adsbase.Ad;
 import com.startapp.sdk.adsbase.StartAppAd;
 import com.startapp.sdk.adsbase.StartAppSDK;
+import com.startapp.sdk.adsbase.adlisteners.AdEventListener;
 
-import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.Charset;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String LOG_TAG = "native_ads";
+    /**
+     Regarding native ads
+     */
+    @Nullable
+    protected AdapterWithNativeAd adapter;
+    RecyclerView rcv_nativeAds;
+    CardView cv_nativeAds;
+
     public static db database;
 
     ViewFlipper vf_main;
     Animation slideIn, slideOut;
-    CardView cv_OnThi ,cv_DeThi, cv_YourQuiz, cv_note;
+    CardView cv_OnThi ,cv_DeThi, cv_YourQuiz, cv_note, cv_tamly;
 
-    List<DeThi> deThiList;
+    List<DeOnThi> deThiList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        StartAppSDK.setTestAdsEnabled(true);
+        //StartAppSDK.setTestAdsEnabled(true);
         StartAppAd.disableSplash();
 
         mappting();
@@ -49,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
         slideShow();
 
         createDatabase();
+
+        nativeAds();
+
     }
 
 
@@ -145,6 +171,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Note_System.class));
             }
         });
+
+        cv_tamly.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, TamLy.class));
+            }
+        });
     }
 
     private void mappting() {
@@ -155,5 +188,89 @@ public class MainActivity extends AppCompatActivity {
         //cv_YourQuiz  = (CardView) findViewById(R.id.cv_YourQuiz);
         cv_note      = (CardView) findViewById(R.id.cv_note);
 
+        cv_tamly     = (CardView) findViewById(R.id.cv_tamly);
+    }
+
+
+    private void nativeAds() {
+        // NOTE always use test ads during development and testing
+        //StartAppSDK.setTestAdsEnabled(BuildConfig.DEBUG);
+
+//        setContentView(R.layout.recycler_view);
+
+        cv_nativeAds  = (CardView) findViewById(R.id.cv_nativeAds);
+        rcv_nativeAds = (RecyclerView) findViewById(R.id.rcv_nativeAds);
+        rcv_nativeAds.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.VERTICAL, false));
+        rcv_nativeAds.setAdapter(adapter = new AdapterWithNativeAd(MainActivity.this));
+
+        loadData();
+        loadNativeAd();
+    }
+
+    private void loadNativeAd() {
+        final StartAppNativeAd nativeAd = new StartAppNativeAd(MainActivity.this);
+
+        nativeAd.loadAd(new NativeAdPreferences()
+                .setAdsNumber(1)
+                .setAutoBitmapDownload(true)
+                .setPrimaryImageSize(2), new AdEventListener() {
+            @Override
+            public void onReceiveAd(Ad ad) {
+                if (adapter != null) {
+                    cv_nativeAds.setVisibility(View.VISIBLE);
+                    adapter.setNativeAd(nativeAd.getNativeAds());
+                }
+            }
+
+            @Override
+            public void onFailedToReceiveAd(Ad ad) {
+                if (BuildConfig.DEBUG) {
+                    Log.v(LOG_TAG, "onFailedToReceiveAd: " + ad.getErrorMessage());
+                }
+            }
+        });
+    }
+
+    // TODO example of loading JSON array, change this code according to your needs
+    @UiThread
+    private void loadData() {
+        if (adapter != null) {
+//            adapter.setData(Collections.singletonList("Loading..."));
+        }
+
+        AsyncTask.THREAD_POOL_EXECUTOR.execute(new Runnable() {
+            @Override
+            @WorkerThread
+            public void run() {
+                String url = "https://raw.githubusercontent.com/StartApp-SDK/StartApp_InApp_SDK_Example/master/app/data.json";
+
+                final List<String> data = new ArrayList<>();
+
+                try (InputStream is = new URL(url).openStream()) {
+                    if (is != null) {
+                        JsonReader reader = new JsonReader(new InputStreamReader(is));
+                        reader.beginArray();
+
+                        while (reader.peek() == JsonToken.STRING) {
+                            data.add(reader.nextString());
+                        }
+
+                        reader.endArray();
+                    }
+                } catch (RuntimeException | IOException ex) {
+                    data.clear();
+                    data.add(ex.toString());
+                } finally {
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            if (adapter != null) {
+//                                adapter.setData(data);
+//                            }
+//                        }
+//                    });
+                }
+            }
+        });
     }
 }

@@ -122,6 +122,8 @@
                         android:layout_height="600dp"/>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_nativeAds"
+                        android:visibility="gone"
                         android:backgroundTint="#03A9F4"
                         app:cardCornerRadius="10dp"
                         android:layout_marginTop="15dp"

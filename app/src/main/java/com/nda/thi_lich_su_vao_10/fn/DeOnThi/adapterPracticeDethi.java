@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nda.thi_lich_su_vao_10.R;
-import com.nda.thi_lich_su_vao_10.fn.DetailDe.DetailDe_System;
 import com.nda.thi_lich_su_vao_10.fn.DetailDe_Another.ScreenSlideActivity;
 
 import java.util.List;
@@ -20,9 +19,9 @@ import java.util.List;
 public class adapterPracticeDethi extends RecyclerView.Adapter<adapterPracticeDethi.practiceDeThiViewHolder> {
 
     DeOnThi_System context;
-    List<DeThi> deThiList;
+    List<DeOnThi> deThiList;
 
-    public adapterPracticeDethi(DeOnThi_System context, List<DeThi> deThiList) {
+    public adapterPracticeDethi(DeOnThi_System context, List<DeOnThi> deThiList) {
         this.context = context;
         this.deThiList = deThiList;
     }
@@ -35,7 +34,7 @@ public class adapterPracticeDethi extends RecyclerView.Adapter<adapterPracticeDe
 
     @Override
     public void onBindViewHolder(@NonNull  adapterPracticeDethi.practiceDeThiViewHolder holder, int position) {
-        DeThi deThi = deThiList.get(position);
+        DeOnThi deThi = deThiList.get(position);
 
         holder.txt_showExamNumber.setText(deThi.getTopicNumber());
         holder.txt_showExamTitle.setText(deThi.getTopicTItle());
@@ -90,4 +89,6 @@ public class adapterPracticeDethi extends RecyclerView.Adapter<adapterPracticeDe
             ll_showExam     = (LinearLayout) itemView.findViewById(R.id.ll_showExam);
         }
     }
+
+
 }

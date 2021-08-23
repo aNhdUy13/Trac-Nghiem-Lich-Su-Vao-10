@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fn.TamLy.TamLy">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="10"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#03A9F4"
+            android:weightSum="2"
+            android:layout_weight="0.7">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3">
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.7">
+                <TextView
+                    android:id="@+id/txt_title"
+                    android:text="Vững Chắc Tâm Lý"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="17dp"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9.3">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:src="@drawable/ic_tamly"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="350dp"
+                        android:layout_height="200dp"/>
+
+                    <com.startapp.sdk.ads.banner.banner3d.Banner3D
+                        android:layout_marginTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:textSize="13dp"
+                        android:text="Vấn đề học sinh đang lo lắng là làm sao để nhớ được khối lượng kiến thức khổng lồ trên. Bạn Minh Anh, học sinh lớp 9 tại Hà Nội chia sẻ: 'Môn Lịch sử lâu nay học sinh thường học thuộc lòng nên tình trạng học trước quên sau rất phổ biến. Nhớ được kiến thức cơ bản cùng với các mốc thời gian là vấn đề chúng em rất lo lắng, đặc biệt là việc ôn cùng lúc 4 môn'."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:text="Chia sẻ về vấn đề này, Thạc sĩ Lịch sử Nguyễn Thị Quỳnh Mai – Trưởng phòng Đào tạo Hệ thống Giáo dục HOCMAI, đã có 6 lưu ý để học sinh ôn tập tốt trong 3 tháng còn lại:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Một là, học sinh cần bám chắc cấu trúc đề minh họa để ôn tập, ôn đều các chuyên đề theo kế hoạch phù hợp, không để mất điểm phần lịch sử thế giới vì phần này đa phần câu hỏi dễ lấy điểm."
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:text="Hai là, ôn tập có lộ trình: tháng 3 tập trung rà soát các kiến thức theo chương trình lớp 9, tháng 4 có thể kết hợp luyện đề và ôn bổ sung kiến thức còn thiếu, tháng 5 cần đẩy mạnh luyện đề, bấm giờ như thi thật, rèn kỹ năng làm bài thi trắc nghiệm. Câu hỏi trong đề thi không khó nhưng cần rèn luyện nhiều để hình thành phản xạ và tránh sai sót để mất điểm đáng tiếc."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Ba là, đọc – ôn kỹ các bài tổng kết chương để nắm được các diễn biến của lịch sử trong mỗi giai đoạn, mỗi thời kỳ, từ đó có cái nhìn tổng quát về lịch sử."
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Bốn là, rèn cách tìm từ khóa trong mỗi câu hỏi để tránh bị lạc đề, tránh các đáp án nhiều, bẫy, dẫn đến mất điểm đáng tiếc."
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Năm là, rèn luyện cách làm bài trắc nghiệm như phân chia thời gian làm bài hợp lý, bấm giờ làm bài để không bị quá thời gian, làm từ dễ đến khó. Ngay từ thời điểm này cần luyện tập bằng các bài tập tự luyện dạng trắc nghiệm để làm quen dần."
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:text="Sáu là, học qua sơ đồ tư duy, thẻ nhớ kiến thức. Mỗi bài học, chương, giai đoạn lịch sử có thể hệ thống lại thành sơ đồ để dễ nhớ, dễ tra cứu khi cần. Đồng thời mỗi bài học, sự kiện, nhân vật có thể dùng giấy nhớ để ghi lại các điểm chính cần ghi nhớ."
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:text="Các em học sinh cần bình tĩnh, lên kế hoạch học tập và ôn luyện trong thời gian còn lại cho môn Lịch sử nói riêng và cả 4 môn thi tuyển vào lớp 10 hợp lý nhất. Những vấn đề khó khăn, vướng mắc có thể trao đổi, tạo nhóm bạn cùng học để thảo luận hoặc hỏi trực tiếp giáo viên đang giảng dạy. Đặc biệt lưu ý việc đi học thêm tràn lan dễ dẫn đến tình trạng quá tải, mệt mỏi làm ảnh hưởng đến kết quả học tập chung."
+                        android:layout_marginTop="15dp"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_nativeAds"
+                        android:visibility="gone"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcv_nativeAds"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

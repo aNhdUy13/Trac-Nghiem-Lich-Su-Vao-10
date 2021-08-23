@@ -12,8 +12,11 @@
         android:roundIcon="@mipmap/app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Thi_Lich_Su_Vao_10">
-        <activity android:name=".fn.DoneExam.ExamFinished"
+        <activity android:name=".fn.TamLy.TamLy"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
+            android:name=".fn.DoneExam.ExamFinished"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".fn.DetailDe_Another.ScreenSlideActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

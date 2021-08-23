@@ -53,7 +53,7 @@ public class Note_System extends AppCompatActivity {
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                startActivity(new Intent(Note_System.this,MainActivity.class));
             }
         });
         img_addNote.setOnClickListener(new View.OnClickListener() {

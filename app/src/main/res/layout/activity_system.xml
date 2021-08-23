@@ -73,11 +73,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="700dp"/>
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rcv_nativeAds"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_nativeAds"
                         android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"/>
+                        android:visibility="gone"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcv_nativeAds"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </androidx.cardview.widget.CardView>
 
 
                 </LinearLayout>

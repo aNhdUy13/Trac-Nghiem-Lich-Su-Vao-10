@@ -27,6 +27,7 @@
         <TextView
             android:id="@+id/txt_ans"
             android:text="E"
+            android:textColor="#D80A0A"
             android:textStyle="bold"
             android:textSize="15dp"
             android:gravity="center"

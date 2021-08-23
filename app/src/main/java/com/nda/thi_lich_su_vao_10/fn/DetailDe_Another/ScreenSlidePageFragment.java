@@ -114,6 +114,9 @@ public class ScreenSlidePageFragment extends Fragment {
 
             if (checkAns != 0 )
             {
+                /**
+                 * When user submit the exam
+                 */
                 radioBtn_ansA.setClickable(false);
                 radioBtn_ansB.setClickable(false);
                 radioBtn_ansC.setClickable(false);
@@ -138,7 +141,7 @@ public class ScreenSlidePageFragment extends Fragment {
 
         }catch (Exception e)
         {
-            Toast.makeText(getContext(), "Error : SSPF - Not enough element", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(), "Error : SSPF - Not enough element", Toast.LENGTH_SHORT).show();
         }
 
 

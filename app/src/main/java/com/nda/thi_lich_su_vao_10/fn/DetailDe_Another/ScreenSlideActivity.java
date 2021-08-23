@@ -100,7 +100,6 @@ public class ScreenSlideActivity extends FragmentActivity {
 
     private void initiate()
     {
-        dialogReady();
 
         img_checkGrade.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,13 +127,18 @@ public class ScreenSlideActivity extends FragmentActivity {
         bundle = intent.getExtras();
         if (bundle.containsKey("practice"))
         {
+            dialogReady();
+
             doPractice();
         }
-        if (bundle.containsKey("deThiChinhThuc"))
+        if (bundle.containsKey("thi"))
         {
-            //doDeThiChinhThuc();
+            dialogReady();
+
+            doDeThiChinhThuc();
         }
     }
+
 
     private void dialogReady() {
         Dialog dialog = new Dialog(ScreenSlideActivity.this);
@@ -371,19 +375,65 @@ public class ScreenSlideActivity extends FragmentActivity {
         }
 
     }
+
+
+    /**
+     *  When user want to thi
+     */
+    private void doDeThiChinhThuc()
+    {
+        topicNumber  = intent.getStringExtra("examNumber");
+        examTitle   = intent.getStringExtra("examTitle");
+
+        txt_title.setText(examTitle);
+        readDetail_thi(topicNumber);
+    }
+    private void readDetail_thi(String topicNumber)
+    {
+        InputStream inputStream = getResources().openRawResource(R.raw.thi_detail);
+        BufferedReader bufferedReader = new BufferedReader(
+                new InputStreamReader(inputStream, Charset.forName("UTF-8"))
+        );
+
+        String line;
+        try {
+            while ((line = bufferedReader.readLine()) != null)
+            {
+
+                String[] split =  line.split(";");
+
+                Question question;
+
+                if (split[0].equals(topicNumber))
+                {
+//                    Toast.makeText(this, "In Raw = " + split[0], Toast.LENGTH_LONG).show();
+
+                    question = new Question(split[0],split[1],split[2], split[3],split[4],split[5], split[6], split[7], "");
+                    questionList.add(question);
+                }
+            }
+
+        } catch (Exception e)
+        {
+            Toast.makeText(this, "Có Lỗi Xảy Ra : Load Detail Practice !", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     *
+     * @return The list of question (contain question, ans, etc)
+     */
     public List<Question> getData()
     {
         return questionList;
     }
-
-
 
     @Override
     public void onBackPressed() {
         if (mPager.getCurrentItem() == 0) {
             // If the user is currently looking at the first step, allow the system to handle the
             // Back button. This calls finish() on this activity and pops the back stack.
-            super.onBackPressed();
+            dialogOutExam();
         } else {
             // Otherwise, select the previous step.
             mPager.setCurrentItem(mPager.getCurrentItem() - 1);
@@ -417,7 +467,7 @@ public class ScreenSlideActivity extends FragmentActivity {
 
 
     /**
-     * Di Chuyển GIữa các fragment
+     * Di Chuyển GIữa các fragment ( câu hỏi )
      */
     public class DepthPageTransformer implements ViewPager.PageTransformer {
         private static final float MIN_SCALE = 0.75f;
