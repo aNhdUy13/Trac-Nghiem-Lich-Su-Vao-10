@@ -84,6 +84,8 @@ public class DeOnThi_System extends AppCompatActivity {
         try {
             while ((line = bufferedReader.readLine()) != null)
             {
+
+
                 String[] split =  line.split(";");
                 DeOnThi deThi;
 //||

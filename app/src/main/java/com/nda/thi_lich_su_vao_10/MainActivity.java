@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     ViewFlipper vf_main;
     Animation slideIn, slideOut;
-    CardView cv_OnThi ,cv_DeThi, cv_YourQuiz, cv_note, cv_tamly;
+    CardView cv_OnThi ,cv_DeThi, cv_YourQuiz, cv_note, cv_tamly, cv_share;
 
     List<DeOnThi> deThiList;
 
@@ -178,6 +178,31 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, TamLy.class));
             }
         });
+
+        shareApp();
+
+
+    }
+
+    private void shareApp() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        String shareBody = "https://play.google.com/store/apps/details?id=com.nda.thi_lich_su_vao_10";
+        /*The type of the content is text, obviously.*/
+        intent.setType("text/plain");
+        /*Applying information Subject and Body.*/
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.share_subject));
+        intent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        cv_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    startActivity(Intent.createChooser(intent, getString(R.string.share_using)));
+
+//                    startActivity(sendIntent);
+                } catch (Exception e)
+                { e.printStackTrace();}
+            }
+        });
     }
 
     private void mappting() {
@@ -189,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
         cv_note      = (CardView) findViewById(R.id.cv_note);
 
         cv_tamly     = (CardView) findViewById(R.id.cv_tamly);
+        cv_share     = (CardView) findViewById(R.id.cv_share);
     }
 
 

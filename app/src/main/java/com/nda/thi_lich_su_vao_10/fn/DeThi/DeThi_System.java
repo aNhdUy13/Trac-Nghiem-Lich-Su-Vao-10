@@ -48,9 +48,15 @@ public class DeThi_System extends AppCompatActivity {
     RecyclerView rcv_nativeAds;
     CardView cv_nativeAds;
 
+    /**
+     * Activity fn
+     */
     ImageView imgBack;
     TextView txt_title;
 
+    /**
+     * Setup RCV
+     */
     RecyclerView rcv_showExamTopic;
     List<DeThi> deThiList;
     AdapterThi mAdapterThi;
